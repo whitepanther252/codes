@@ -1,0 +1,128 @@
+/* Header.css */
+.header {
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+  }
+  
+  .container {
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .navbar-brand {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .navbar-brand a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    margin-left: 250%;
+  }
+  
+  .navbar-toggler {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 300%;
+  }
+  
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    width: 30px;
+    height: 20px;
+    justify-content: space-between;
+  }
+  
+  .hamburger span {
+    background-color: #fff;
+    height: 3px;
+    width: 90%;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .navbar-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 77px;
+    right: -100%;
+    width: 100%;
+    background-color: #333;
+    border: 2px solid black;
+    border-radius: 0 0 10px 10px;
+    transition: right 0.4s ease;
+  }
+  
+  .navbar.open {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .navbar-menu.open {
+    right: 0;
+  }
+  
+  .navbar-menu.open .navbar-item {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .navbar-item {
+    padding: 10px 0;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .navbar-item a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .navbar-menu {
+      position: relative;
+      top: auto;
+      right: auto;
+      display: flex;
+      width: auto;
+      background-color: transparent;
+      flex-direction: row;
+    }
+  
+    .navbar-item {
+      margin-left: 20px;
+      padding: 0;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  
+    .navbar.open {
+      background-color: transparent;
+    }
+  
+    .navbar-menu.open {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  
+  @media screen and (max-width: 300px) { 
+      .navbar-toggler {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      margin-left: 200%;
+    }
+  }
